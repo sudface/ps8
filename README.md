@@ -1,4 +1,4 @@
 # Pearson Science 8 (PS8)
-This Repo contains all the pages of the Pearson Science 8 NSW in image form.
-I also realise that this isn't exactly what GitHub was intended for...
-Soz.
+This Repo is the base of a Chrome Extension i am building.
+<br> Firstly i have uploaded the **369** pages of the PS8 Textbook.
+<br> I will then slowly add the chrome extension.
