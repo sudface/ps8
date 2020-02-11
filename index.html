@@ -1,0 +1,177 @@
+<html>
+
+  <head><script src="/gdpr/gdprscript.js?buildTime=1560811079"></script>
+    <title>Pearson Science 8</title>
+<h1>Pearson Science 8</h1>    
+<br>Use the Buttons or the Jump to Page to navigate. Arrow keys will be slower than the buttons.
+<style>
+        body {
+            display: block;
+            width: 780px;
+            margin: 15px auto;
+            padding: 15px;
+        }
+
+        #page {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #888;
+            margin: 15px auto;
+        }
+
+        button.button {
+            display: block;
+            padding: 15px;
+            float: left;
+            width: calc(50% - 15px);
+            box-sizing: border-box;
+            margin: 15px;
+            background: dodgerblue;
+            opacity: 0.7;
+            transition: .3s all ease;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button.button:hover {
+            opacity: 1;
+        }
+
+        #prevPage { margin-left: 0px !important }
+        #nextPage { margin-right: 0px !important }
+
+        #someInput {
+            border-radius: 5px;
+            color: #666;
+            transition: .3s ease all;
+            border: 1px solid #888;
+            box-shadow: 1px 1px 1px #888;
+            width: 100%;
+            clear: both;
+            margin: 15px auto;
+            padding: 15px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        #someInput:active {
+            color: dodgerblue !important;
+        }
+    </style>
+</head>
+<body>
+    <button class="button button1" id="prevPage">Previous Page </button>
+    <button class="button button1" id="nextPage">Next Page </button>
+    <input placeholder="#Enter Page Number..." id="someInput" type="text">
+    <img id="page" src="https://github.com/sudface/ps8/raw/master/1.png" alt="">
+    <script>
+        /**
+         * @description this is a self invoked function, the purpose of
+         * making this code into a self invoked function  is to ensure that
+         * this code does not interfere with any other potential code that
+         * you may have on the page, i.e. other js scripts/libs/framworks
+         */
+
+        !function() {
+          // change this to the last relevant page if you like
+            var skipTo = 13;
+            var maxPage = 355 + skipTo; // got this from the Acknowledgments page
+            var a = 1;
+            var b = null;
+            var minPage = 1;
+            var $ = function(x) {
+                return document.querySelector(x);
+            };
+            var events = function(x, y, fnc) {
+                var list = x.split(" ");
+                for (var i = 0; i < list.length; i++) {
+                    y.addEventListener(list[i], fnc);
+                }
+                return void 0;
+            };
+
+            events("click", $('#nextPage'), PlusPage);
+            events("click", $('#prevPage'), RemPage);
+            events("keypress keyup keydown", $('#someInput'), doStuff);
+
+            function goTo(p) {
+                var start = "https://github.com/sudface/ps8/raw/master/",
+                end = ".png";
+                   p = parseInt(p) + 13; 
+$("#page").src = start + p + end; 
+} 
+
+
+            function PlusPage() {
+                // validation
+                if (a >= maxPage) { return; }
+                goTo(++a);
+            }
+
+            function RemPage() {
+              // validation
+                if (a <= minPage) { return; }
+                goTo(--a);
+            }
+
+            function doStuff() {
+                var val = this.value;
+                var firstPage = function() {
+                    b = "https://github.com/sudface/ps8/raw/master/" + 1 + ".png";
+                    $("#page").src = b;
+                    return;
+                };
+                // validation
+                if (val == '') { return firstPage(); }
+                if (isNaN(val)) { return; } // isNaN = is not a number
+                if (val > maxPage) { return; }
+                if (val < minPage) { return; }
+                a = val;
+                goTo(a);
+            }
+        }();
+        
+      
+<!--
+
+document.onkeydown = function() {
+    switch (window.event.keyCode) {
+        case 37:
+            document.getElementById("prevPage").click()
+            console.log('Left key is pressed')
+            break;
+        
+        case 39:
+        document.getElementById("nextPage").click()
+			console.log('Right key is pressed') 
+            break;
+        
+    }
+};
+
+
+//-->
+
+
+
+    </script>
+<div>By Sudarshan</div>
+    </body>
+
+</html></div>
+
+
+
+</div>
+
+<h2 class="wsite-content-title">Page Numbers for each Section below:<br /><font size="3">In format:</font><br /><strong>Topic Name: Page#&nbsp;</strong></h2>
+
+<div class="paragraph"><strong>Chapter 1 - Working with Scientific Data: 1</strong><br />1.1 First-Hand Data: 2<br />1.1 Unit Review: 7<br />1.2 Second-Hand Data: 11<br />1.2 Unit Review: 15<br />1.3 Processing and Analysing Data: 18<br />1.3 Unit review: 24<br />1.4 Planning Investigations: 28<br />Learning Across the Curriculum: 31<br />1.4 Unit Review: 33<br />Chapter 1 Review: 38<br />Glossary: 40<br />===========&nbsp;<br /><strong>Chapter 2 - Cells: 41</strong><br />2.1 Making Things Bigger: 42<br />2.1 Unit Review: 46<br />2.2 Natural Building Blocks: 50<br />Learning Across The Curriculum: 54<br />2.2 Unit Review: 56<br />2.3 Specialised Cells: 61<br />2.3 Unit Review: 65<br />2.4 Cell to Organism: 68<br />Learning Across The Curriculum: 74<br />2.4 Unit Review: 76<br />Chapter 2 Review: 78<br />Glossary: 81<br />==============<br /><strong>Chapter 3 - Body Systems: 83</strong><br />3.1 Digestion: 84<br />3.1 Unit Review: 90<br />3.2 Breathing and Respiration: 94<br />3.2 Unit Review: 99<br />3.3 Circulation: 104<br />Learning Across the Curriculum: 110<br />3.3 Unit Review: 111<br />3.4 Waste Disposal: 115<br />Learning Across the Curriculum: 119<br />3.4 Unit Review: 120<br />3.5 Muscles and Bones: 123<br />3.5 Unit Review: 128<br />Chapter 3 Review: 132<br />Glossary: 135<br />===========<br /><strong>Chapter 4 - Growth and Reproduction: 137</strong><br />4.1 Life Cycles: 138<br />Learning Across the Curriculum: 142<br />4.1 Unit Review: 143<br />4.2 Methods of Reproduction: 145<br />4.2 Unit Review: 151<br />4.3 The Human Reproductive System: 156<br />4.3 Unit Review: 160<br />4.4 Pregnancy: 162<br />Learning Across the Curriculum: 166<br />4.4 Unit Review: 168<br />Chapter 4 Review: 170<br />Glossary: 172<br />=============<br /><strong>Chapter 5 - Energy: 175</strong><br />5.1 Energy Around You: 176<br />5.1 Unit Review: 183<br />5.2 Energy Efficiency: 189<br />5.2 Unit Review: 197<br />5.3 Electrical Energy: 202<br />5.3 Unit Review: 206<br />5.4 Simple Machines: 211<br />Learning Across The Curriculum: 217<br />5.4 Unit Review: 218<br />Chapter 5 Review: 224<br />Glossary: 226<br />===============<br /><strong>Chapter 6 - Elements, Compounds and Mixtures: 228</strong><br />6.1 Elements: 229<br />Learning Across the Curriculum: 235<br />6.1 Unit Review: 237<br />6.2 Compounds and Mixtures: 240<br />6.2 Unit Review: 245<br />6.3 Ten World-Changing Substances: 248<br />6.3 Unit Review: 254<br />Chapter 6 Review: 259<br />Glossary: 261<br />================<br /><strong>Chapter 7 - Physical and Chemical Change: 263</strong><br />7.1 When Substances Change: 264<br />Learning Across the Curriculum: 270<br />7.1 Unit Review: 271<br />7.2 Understanding Physical Change: 274<br />7.2 Unit Review: 278<br />7.3 Chemical Reactions: 281<br />7.3 Unit Review: 288<br />Chapter 7 Review: 292<br />Glossary: 294<br />================<br /><strong>Chapter 8 - Rocks and Minerals: 295</strong><br />8.1 Igneous Rocks: 296<br />8.1 Unit Review: 302<br />8.2 Weathering: 307<br />8.2 Unit Review: 311<br />8.3 Sedimentary Rocks: 314<br />8.3 Unit Review: 320<br />8.4 Metamorphic Rocks: 324<br />8.4 Unit Review: 327<br />8.5 Mineral Resources: 329<br />Learning Across the Curriculum: 333<br />8.5 Unit Review: 335<br />Chapter 8 Review: 340<br />Glossary: 343<br /><strong>Index: 345&nbsp;</strong></div>
+			</div>
+		</div>
+      </div>
+
+	</div>
+</div>
