@@ -1,0 +1,583 @@
+<html>
+
+  <head>
+    <!-- FIREBASE SH1T  -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.8.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+	<!-- END FIRE SH1T -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">	
+<title>Pearson Science 8</title>
+<h1>Pearson Science 8</h1>    
+<br>Use the Buttons or the Jump to Page to navigate. Arrow keys will be slower than the buttons.
+ <section>
+<style>
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: #ffffff;
+    color: dodgerblue;
+}
+</style>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</section>
+<style>
+/* Global styling sh1t */
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+</style>
+<style>
+
+ @font-face { font-family: 'Birdseye'; src:  url('birdseye2.ttf') format('truetype'); font-weight: 100; font-style: normal; }
+ 
+div.paragraph {
+    font-family: 'birdsye', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.75;
+    margin: 0 auto 30px;
+}
+</style>
+<style>
+        body {
+            display: block;
+            width: 780px;
+            margin: 15px auto;
+            padding: 15px;
+        }
+
+        #page {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #888;
+            margin: 15px auto;
+        }
+
+        button.button {
+            display: block;
+            padding: 15px;
+            float: left;
+            width: calc(50% - 15px);
+            box-sizing: border-box;
+            margin: 15px;
+            background: dodgerblue;
+            opacity: 0.7;
+            transition: .3s all ease;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button.button:hover {
+            opacity: 1;
+        }
+		button.buttonx {
+            display: block;
+            padding: 15px;
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+            margin: ;
+            background: dodgerblue;
+            opacity: 0.7;
+            transition: .3s all ease;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button.buttonx:hover {
+            opacity: 1;
+        }
+
+
+        #prevPage { margin-left: 0px !important }
+        #nextPage { margin-right: 0px !important }
+
+        #someInput {
+            border-radius: 5px;
+            color: #666;
+            transition: .3s ease all;
+            border: 1px solid #888;
+            box-shadow: 1px 1px 1px #888;
+            width: 100%;
+            clear: both;
+            margin: 15px auto;
+            padding: 15px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        #someInput:active {
+            color: dodgerblue !important;
+        }
+    </style>
+
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close, .close2 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.scrollable {
+    height: 400px; /* need to adaptise */
+    overflow-y: auto;
+}
+
+.scrollable2 {
+    height: 500px; /* need to adaptise */
+    overflow-y: auto;
+	}
+</style>
+
+
+</head>
+<body>
+    <button class="button button1" id="prevPage">Previous Page </button>
+    <button class="button button1" id="nextPage">Next Page </button>
+    <input placeholder="#Enter Page Number..." id="someInput" type="text">
+    <img id="page" src="https://github.com/sudface/ps8/raw/master/1.png" alt="">
+    <script>
+        /**
+         * @description this is a self invoked function, the purpose of
+         * making this code into a self invoked function  is to ensure that
+         * this code does not interfere with any other potential code that
+         * you may have on the page, i.e. other js scripts/libs/framworks
+         */
+
+        !function() {
+          // change this to the last relevant page if you like
+            var skipTo = 13;
+            var maxPage = 355 + skipTo; // got this from the Acknowledgments page
+            var a = 1;
+            var b = null;
+            var minPage = 1;
+            var $ = function(x) {
+                return document.querySelector(x);
+            };
+            var events = function(x, y, fnc) {
+                var list = x.split(" ");
+                for (var i = 0; i < list.length; i++) {
+                    y.addEventListener(list[i], fnc);
+                }
+                return void 0;
+            };
+
+            events("click", $('#nextPage'), PlusPage);
+            events("click", $('#prevPage'), RemPage);
+            events("keypress keyup keydown", $('#someInput'), doStuff);
+
+            function goTo(p) {
+                var start = "https://github.com/sudface/ps8/raw/master/",
+                end = ".png";
+                   p = parseInt(p) + 13; 
+$("#page").src = start + p + end; 
+} 
+
+
+            function PlusPage() {
+                // validation
+                if (a >= maxPage) { return; }
+                goTo(++a);
+            }
+
+            function RemPage() {
+              // validation
+                if (a <= minPage) { return; }
+                goTo(--a);
+            }
+
+            function doStuff() {
+                var val = this.value;
+                var firstPage = function() {
+                    b = "https://github.com/sudface/ps8/raw/master/" + 1 + ".png";
+                    $("#page").src = b;
+                    return;
+                };
+                // validation
+                if (val == '') { return firstPage(); }
+                if (isNaN(val)) { return; } // isNaN = is not a number
+                if (val > maxPage) { return; }
+                if (val < minPage) { return; }
+                a = val;
+                goTo(a);
+            }
+        }();
+        
+      
+<!--
+
+document.onkeydown = function() {
+    switch (window.event.keyCode) {
+        case 37:
+            document.getElementById("prevPage").click()
+            console.log('Left key is pressed')
+            break;
+        
+        case 39:
+        document.getElementById("nextPage").click()
+			console.log('Right key is pressed') 
+            break;
+        
+    }
+};
+
+
+//-->
+
+
+
+    </script>
+<div>By Sudarshan</div>
+    </body>
+
+</div>
+
+
+
+</div>
+
+<!-- Trigger/Open The Modal --><br>
+<button class="buttonx" id="moBtn">Contents</button><br><br>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Contents</h2>
+    </div>
+    <div class="modal-body">
+     <div class="paragraph scrollable">
+<strong>Chapter 1 - Working with Scientific Data: 1</strong>
+<br>1.1 First-Hand Data: 2
+<br>1.1 Unit Review: 7
+<br>1.2 Second-Hand Data: 11
+<br>1.2 Unit Review: 15
+<br>1.3 Processing and Analysing Data: 18
+<br>1.3 Unit review: 24
+<br>1.4 Planning Investigations: 28
+<br>Learning Across the Curriculum: 31
+<br>1.4 Unit Review: 33
+<br>Chapter 1 Review: 38
+<br>Glossary: 40
+<br><hr>
+<br>
+<strong>Chapter 2 - Cells: 41</strong>
+<br>2.1 Making Things Bigger: 42
+<br>2.1 Unit Review: 46
+<br>2.2 Natural Building Blocks: 50
+<br>Learning Across The Curriculum: 54
+<br>2.2 Unit Review: 56
+<br>2.3 Specialised Cells: 61
+<br>2.3 Unit Review: 65
+<br>2.4 Cell to Organism: 68
+<br>Learning Across The Curriculum: 74
+<br>2.4 Unit Review: 76
+<br>Chapter 2 Review: 78
+<br>Glossary: 81
+<br><hr>
+<br>
+<strong>Chapter 3 - Body Systems: 83</strong>
+<br>3.1 Digestion: 84
+<br>3.1 Unit Review: 90
+<br>3.2 Breathing and Respiration: 94
+<br>3.2 Unit Review: 99
+<br>3.3 Circulation: 104
+<br>Learning Across the Curriculum: 110
+<br>3.3 Unit Review: 111
+<br>3.4 Waste Disposal: 115
+<br>Learning Across the Curriculum: 119
+<br>3.4 Unit Review: 120
+<br>3.5 Muscles and Bones: 123
+<br>3.5 Unit Review: 128
+<br>Chapter 3 Review: 132
+<br>Glossary: 135
+<br><hr>
+<br><strong>Chapter 4 - Growth and Reproduction: 137</strong>
+<br>4.1 Life Cycles: 138
+<br>Learning Across the Curriculum: 142
+<br>4.1 Unit Review: 143
+<br>4.2 Methods of Reproduction: 145
+<br>4.2 Unit Review: 151
+<br>4.3 The Human Reproductive System: 156
+<br>4.3 Unit Review: 160
+<br>4.4 Pregnancy: 162
+<br>Learning Across the Curriculum: 166
+<br>4.4 Unit Review: 168
+<br>Chapter 4 Review: 170
+<br>Glossary: 172
+<br><hr>
+<br><strong>Chapter 5 - Energy: 175</strong>
+<br>5.1 Energy Around You: 176
+<br>5.1 Unit Review: 183
+<br>5.2 Energy Efficiency: 189
+<br>5.2 Unit Review: 197
+<br>5.3 Electrical Energy: 202
+<br>5.3 Unit Review: 206
+<br>5.4 Simple Machines: 211
+<br>Learning Across The Curriculum: 217
+<br>5.4 Unit Review: 218
+<br>Chapter 5 Review: 224
+<br>Glossary: 226
+<br><hr>
+<br><strong>Chapter 6 - Elements, Compounds and Mixtures: 228</strong>
+<br>6.1 Elements: 229
+<br>Learning Across the Curriculum: 235
+<br>6.1 Unit Review: 237
+<br>6.2 Compounds and Mixtures: 240
+<br>6.2 Unit Review: 245
+<br>6.3 Ten World-Changing Substances: 248
+<br>6.3 Unit Review: 254
+<br>Chapter 6 Review: 259
+<br>Glossary: 261
+<br><hr>
+<br><strong>Chapter 7 - Physical and Chemical Change: 263</strong>
+<br>7.1 When Substances Change: 264
+<br>Learning Across the Curriculum: 270
+<br>7.1 Unit Review: 271
+<br>7.2 Understanding Physical Change: 274
+<br>7.2 Unit Review: 278
+<br>7.3 Chemical Reactions: 281
+<br>7.3 Unit Review: 288
+<br>Chapter 7 Review: 292
+<br>Glossary: 294
+<br><hr>
+<br><strong>Chapter 8 - Rocks and Minerals: 295</strong>
+<br>8.1 Igneous Rocks: 296
+<br>8.1 Unit Review: 302
+<br>8.2 Weathering: 307
+<br>8.2 Unit Review: 311
+<br>8.3 Sedimentary Rocks: 314
+<br>8.3 Unit Review: 320
+<br>8.4 Metamorphic Rocks: 324
+<br>8.4 Unit Review: 327
+<br>8.5 Mineral Resources: 329
+<br>Learning Across the Curriculum: 333
+<br>8.5 Unit Review: 335
+<br>Chapter 8 Review: 340
+<br>Glossary: 343
+<br><strong>Index: 345&nbsp;</strong></div>
+    </div>
+    <div class="modal-footer">
+      
+      
+<!-- Trigger/Open The Modal -->
+<button id="moBtn2" class="nodecor"><h3>I have a question...?</h3></button>
+
+<style>
+button.nodecor {
+background-color: dodgerblue;
+color: white;
+border: 0px solid white;
+cursor: pointer;
+}
+</style>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close2">&times;</span>
+      <h2>FAQs</h2>
+    </div><div class="scrollable2">
+<div class="modal-body">
+				
+<br>
+<div class="paragraph"><u><strong>I want to go to Page X</strong></u><br>Input the page number in the box under the navigation buttons<br>Do note that editing the page number in the box will instantly change the page in the viewer<br><br><u><strong>I want to go to Chapter X Unit X.Y</strong></u><br>Scroll down on the Texbook page.<br><br><u><strong>Can I get a PDF copy of this textbook?</strong></u><br>No.<br><br><strong><u>Are there any plans to do so?</u></strong><br>No.&nbsp;<br><br><u><strong>Can I view this offline?</strong></u><br>Sorry, no. The textbook is 255mb, and your laptop doesn't allow me to store that offline.<br><br><u><strong>Can I copy text?</strong></u><br>Not directly. Use Snipping Tool (Windows) or Cmd+Shift+4 (Mac), take a snip of the part you want as text and save it, upload the image <a href="https://www.onlineocr.net/" target="_blank">here </a>and you'll get as much text as is possible freely.<br><br><u><strong>It's really blurry.</strong></u><br>a) Be happy with what you get<br>b) Try zooming in<br><br><u><strong>Is this free?</strong></u><br>Yes it is free, and will be for as long it is available<br><br></div></div>
+
+<div class="modal-footer">
+<div class="paragraph"><br>Made with Notepad, Google Chrome<br>Share to your heart's content.<br><font size="1">Special Thanks to Joseph Evans via SO</font><br></div>
+			</div>
+  </div></div>
+
+</div>
+
+<script>
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("moBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal 
+btn2.onclick = function() {
+  modal2.style.display = "block";
+  modal2.style.color = "black"
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+  
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+</script>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("moBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+			</div>
+		</div>
+      </div>
+
+	</div>
+</div>
+</HTML>
